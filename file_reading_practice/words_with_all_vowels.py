@@ -40,3 +40,21 @@ Explanation:
 =================================================
 
 """
+vowels = {'a', 'e', 'i', 'o', 'u'}
+count = 0
+
+with open("file_reading_practice\\sowpods.txt", "r") as file:
+    for word in file:
+        word = word.strip().lower()
+        has_vowels=True
+
+        for vowel in vowels:
+            if vowel not in word:
+                has_vowels=False
+                break
+
+        if has_vowels:
+            print(word)
+            count += 1
+
+print("Total words with all vowels:", count)
